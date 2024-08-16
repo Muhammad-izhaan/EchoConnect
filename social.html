@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>EchoConnect</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        .header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00adb5;
+        }
+
+      .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00adb5;
+            margin-right: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-small {
+            font-size: 0.8rem;
+            color: #cccccc;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 36px;
+            margin: 0;
+            padding: 0;
+        }
+
+       .nav ul li {
+            margin: 0;
+        }
+
+        .nav ul li a img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Reduced gap */
+            margin-top: 1px; /* Reduced margin-top */
+        }
+
+        /* Stories Section */
+        .stories-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px;
+            scroll-snap-type: x mandatory; /* Snap scrolling */
+        }
+
+        .story {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #1e1e1e;
+            border: 2px solid #00adb5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            scroll-snap-align: start; /* Snap alignment */
+        }
+
+        .story img {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+        }
+
+        /* Feed */
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .post {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        .post .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post .post-header .name-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .post .post-header .name-wrapper .name {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .post .post-header .name-wrapper .username {
+            font-size: 0.8rem;
+            color: #cccccc;
+        }
+
+        .post .post-content {
+            line-height: 1.6;
+        }
+
+        .post .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post .post-footer .actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .post .post-footer .actions button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.2s ease; /* Animation */
+        }
+
+        .post .post-footer .actions button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .post .post-footer .actions button:hover {
+            color: #00adb5;
+        }
+
+        .post .post-footer .actions button:active {
+            transform: scale(0.9); /* Scale down on click */
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .stories-container {
+                gap: 10px;
+            }
+
+            .story {
+                width: 60px;
+                height: 60px;
+            }
+
+            .feed {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+         <div class="logo">
+            EchoConnect
+            <span class="logo-small">by Izhaan</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5974/5974636.png" alt="Home"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/6941/6941674.png" alt="Explore"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/15059/15059178.png" alt="Notifications"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1041/1041916.png" alt="Messages"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Stories Section -->
+            <div class="stories-container">
+                <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 1">
+                </div>
+                <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 2">
+                </div>
+                <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 3">
+                </div>
+                <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 4">
+                </div>
+                <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 5">
+                </div>
+                 <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 5">
+                </div>
+                 <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 5">
+                </div>
+                 <div class="story">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Story 5">
+                </div>
+            </div>
+
+            <!-- Feed Section -->
+            <section class="feed">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="name-wrapper">
+                            <span class="name">Izhaan</span>
+                            <span class="username">@IzhaanEchoes</span>
+                        </div>
+                        <span>2h ago</span>
+                    </div>
+                    <img src="https://pbs.twimg.com/media/GVFiJf6bYAAev_K?format=jpg&name=360x360" alt="Post Image">
+                    <div class="post-content">
+                        Demo post #1. #WebDev #Coding
+                    </div>
+                    <div class="post-footer">
+                        <div class="actions">
+                            <button onclick="toggleLike(this)"><img src="https://cdn-icons-png.flaticon.com/128/1533/1533913.png" alt="Like"></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/128/6140/6140855.png" alt="Comment"></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/128/3925/3925158.png" alt="Share"></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/128/6387/6387978.png" alt="Repost"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-header">
+                        <div class="name-wrapper">
+                            <span class="name">DesignMaster</span>
+                            <span class="username">@DesignMaster</span>
+                        </div>
+                        <span>5h ago</span>
+                    </div>
+                    <img src="https://pbs.twimg.com/media/GVGrgPJbQAAzVmI?format=jpg&name=small" alt="Post Image">
+                    <div class="post-content">
+                       Demo post #2 #UIUX #Design
+                    </div>
+                    <div class="post-footer">
+                        <div class="actions">
+                            <button onclick="toggleLike(this)"><img src="https://cdn-icons-png.flaticon.com/128/1533/1533913.png" alt="Like"></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/128/6140/6140855.png" alt="Comment"></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/128/3925/3925158.png" alt="Share"></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/128/6387/6387978.png" alt="Repost"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleLike(button) {
+            const img = button.querySelector('img');
+            const isLiked = img.src.includes('1533913');
+
+            if (isLiked) {
+                img.src = 'https://cdn-icons-png.flaticon.com/128/1533/1533913.png'; // Unliked (Replace with unlike icon if needed)
+            } else {
+                img.src = 'https://cdn-icons-png.flaticon.com/128/1533/1533913.png'; // Liked
+            }
+        }
+    </script>
+</body>
+
+</html>
